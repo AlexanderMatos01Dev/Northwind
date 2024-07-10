@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Infraestructure.Notifications.Services
 {
-    internal class NotificationService : INotificationService
+    public class SmsService : INotificationService
     {
     }
 }

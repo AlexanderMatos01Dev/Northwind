@@ -1,8 +1,7 @@
-﻿
-namespace Northwind.Common.Data.Base
+﻿namespace Northwind.Common.Data.Base
 {
-    public abstract class BaseEntity<TType> 
+    public abstract class BaseEntity<TType>
     {
-        public abstract  TType Id { get; set; }
+        public abstract TType Id { get; set; }
     }
 }

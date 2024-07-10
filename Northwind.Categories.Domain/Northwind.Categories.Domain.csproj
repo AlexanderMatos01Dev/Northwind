@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Notifications\Model\" />
+    <ProjectReference Include="..\Northwind.Common.Data\Northwind.Common.Data.csproj" />
   </ItemGroup>
 
 </Project>
