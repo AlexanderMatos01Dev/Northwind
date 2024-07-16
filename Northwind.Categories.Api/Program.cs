@@ -1,15 +1,28 @@
+using Microsoft.EntityFrameworkCore;
+using Northwind.Categories.Application.Contracts;
+using Northwind.Categories.Persistence.Context;
+using Northwind.Categories.Service;
+using Northwind.Categories.IOC.Dependency; // Asegúrate de que esta línea esté presente
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Configurar la cadena de conexión
+var connstring = builder.Configuration.GetConnectionString("NorthwindContext");
+
+// Registrar el contexto de la base de datos
+builder.Services.AddDbContext<NorthwindContext>(options =>
+    options.UseSqlServer(connstring));
+
+// Registrar otras dependencias necesarias para categorías
+builder.Services.AddCategoryDependency(); // Esta línea asegura que se registren las dependencias
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurar el pipeline de solicitudes HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

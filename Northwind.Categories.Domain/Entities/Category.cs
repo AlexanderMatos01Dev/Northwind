@@ -1,12 +1,24 @@
-﻿using Northwind.Common.Data.Base;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Northwind.Categories.Domain.Entities
 {
-    public abstract class Category : BaseEntity<int>
+    [Table("Categories")]
+    public class Category
     {
+        [Key]
         [Column("CategoryID")]
-       override public int Id { get; set; }
-        
+        public int CategoryID { get; set; }
+
+        [Required]
+        [Column("CategoryName")]
+        [StringLength(15)]
+        public string CategoryName { get; set; }
+
+        [Column("Description")]
+        public string? Description { get; set; }
+
+        [Column("Picture")]
+        public byte[]? Picture { get; set; }
     }
 }

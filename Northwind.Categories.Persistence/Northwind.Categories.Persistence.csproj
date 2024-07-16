@@ -8,11 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Northwind.Categories.Application\Northwind.Categories.Application.csproj" />
     <ProjectReference Include="..\Northwind.Categories.Domain\Northwind.Categories.Domain.csproj" />
-    <ProjectReference Include="..\Northwind.Common.Data\Northwind.Common.Data.csproj" />
   </ItemGroup>
 
 </Project>

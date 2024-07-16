@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Northwind.Categories.Application.Base
+﻿namespace Northwind.Categories.Application.Base
 {
     public class ServiceResult
     {
         public ServiceResult()
         {
-            this.Sucsses = true;
+            this.Success = true;
         }
-
-
-        public string? message { get; set; }
-        public bool Sucsses { get; set; }
-        public dynamic? Result { get; set; }
+        public string? Message { get; set; }
+        public bool Success { get; set; }
+        public dynamic? Result { get; set; } = null;
     }
 }
